@@ -9,11 +9,12 @@ import javax.persistence.*;
 @ToString
 @NoArgsConstructor
 public class User {
-    public User(String firstName, String lastName, String login, String password) {
+    public User(String firstName, String lastName, String login, String password, Roles role) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.login = login;
         this.password = password;
+        this.role = role;
     }
 
     @Id
@@ -34,4 +35,11 @@ public class User {
 
     @Setter
     private String password;
+
+    @Enumerated(EnumType.STRING)
+    private Roles role;
+
+    public enum Roles {
+        ROLE_USER, ROLE_ADMIN
+    }
 }

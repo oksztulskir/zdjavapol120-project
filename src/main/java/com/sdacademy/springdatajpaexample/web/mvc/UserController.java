@@ -1,5 +1,6 @@
 package com.sdacademy.springdatajpaexample.web.mvc;
 
+import com.sdacademy.springdatajpaexample.model.User;
 import com.sdacademy.springdatajpaexample.service.UserService;
 import com.sdacademy.springdatajpaexample.web.mvc.form.CreateUserForm;
 import com.sdacademy.springdatajpaexample.web.mvc.mappers.UserMapper;
@@ -28,6 +29,7 @@ public class UserController {
     @GetMapping
     public String create(ModelMap map) {
         map.addAttribute("user", new CreateUserForm());
+        map.addAttribute("roles", User.Roles.values());
         return "create-user";
     }
 

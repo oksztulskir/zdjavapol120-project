@@ -1,5 +1,6 @@
 package com.sdacademy.springdatajpaexample.web.mvc.form;
 
+import com.sdacademy.springdatajpaexample.model.User;
 import lombok.*;
 
 import javax.validation.constraints.*;
@@ -18,4 +19,5 @@ public class CreateUserForm {
     @Size(min = 8, message = "Minimalna liczba znaków: 8")
     @NotBlank(message = "Pole nie może być puste")
     private String password;
+    private User.Roles role;
 }
