@@ -2,8 +2,12 @@ package com.sdacademy.springdatajpaexample.web.rest;
 
 import com.sdacademy.springdatajpaexample.model.User;
 import com.sdacademy.springdatajpaexample.service.UserService;
+import com.sdacademy.springdatajpaexample.service.auth.CustomUserDetails;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
