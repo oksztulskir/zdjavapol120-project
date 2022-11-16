@@ -1,7 +1,6 @@
 package com.sdacademy.springdatajpaexample.configuration;
 
 import com.sdacademy.springdatajpaexample.model.User;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,7 +27,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .and()
-                .logout();
+                .httpBasic()
+                .and()
+                .logout()
+                .and()
+                .csrf().disable();
     }
 
     @Bean
